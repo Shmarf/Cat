@@ -11,10 +11,10 @@ namespace Dz
         {
             Cat cat = new Cat("Marusia", new DateTime(2001, 03, 05));
             cat.Makenois();
-            
+            cat.HungryStatus = 150;
             Console.WriteLine($"Кошке по имени{cat.Name} уже {cat.GatAge()} лет");
 
-            
+            Console.ReadLine();
 
         }
     }
