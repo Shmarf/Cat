@@ -1,0 +1,4 @@
+C:\Users\popka\source\repos\Dz\Dz\obj\Debug\netcoreapp3.1\Dz.csprojAssemblyReference.cache
+C:\Users\popka\source\repos\Dz\Dz\obj\Debug\netcoreapp3.1\Dz.AssemblyInfoInputs.cache
+C:\Users\popka\source\repos\Dz\Dz\obj\Debug\netcoreapp3.1\Dz.AssemblyInfo.cs
+C:\Users\popka\source\repos\Dz\Dz\obj\Debug\netcoreapp3.1\Dz.csproj.CoreCompileInputs.cache
