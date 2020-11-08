@@ -12,10 +12,10 @@ namespace Dz
         public event EventHandler HungryStatusChanged;
         byte _hungryStatus;
 
-        public void Feed()
+        public void Feed(byte needfood)
 
         {
-            HungryStatus = 100;
+            HungryStatus += needfood;
 
         }
         public Cat(string name, DateTime birthday)
