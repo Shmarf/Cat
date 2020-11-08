@@ -4,13 +4,20 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Dz
 {
     class Cat
     {
 
+        public event EventHandler HungryStatusChanged;
         byte _hungryStatus;
+
+        public void Feed()
+
+        {
+            HungryStatus = 100;
+
+        }
         public Cat(string name, DateTime birthday)
         {
             Name = name;
@@ -18,7 +25,6 @@ namespace Dz
             Task.Run(LifeCircle);
         }
         public string Name { get; set; }
-
         public void Makenois()
         {
             Console.WriteLine($"{Name} мяукает");
@@ -36,13 +42,19 @@ namespace Dz
                 if (value < 0)
                 {
                     _hungryStatus = 0;
+                    HungryStatusChanged?.Invoke(this, null);
                 }
                 else if (value > 100)
                 {
                     _hungryStatus = 100;
+                    HungryStatusChanged?.Invoke(this, null);
                 }
                 else
+                {
                     _hungryStatus = value;
+                    HungryStatusChanged?.Invoke(this, null);
+                }
+
             }
         }
         public void GetStatus()
@@ -79,22 +91,19 @@ namespace Dz
 
         async Task LifeCircle()
         {
-
             await Task.Delay(10000);
             HungryStatus -= 10;
-            GetStatus();
-            Task.Run(LifeCircle);
+
             if (HungryStatus == 0)
             {
                 Console.ForegroundColor = ConsoleColor.Black;
-                Console.WriteLine("Кошки мертва");
+                Console.WriteLine("Кошки нет в живых");
             }
             else
                 await LifeCircle();
 
         }
 
-
-
     }
 }
+
