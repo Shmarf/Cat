@@ -60,8 +60,7 @@ namespace Dz
         }
         public string GetStatus()
         {
-            Console.WriteLine(Name);
-            Console.WriteLine($"Возраст {GatAge()}");
+            
             if (HungryStatus <= 10)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;

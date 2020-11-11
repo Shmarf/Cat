@@ -48,7 +48,7 @@ namespace Dz
 
 
 
-        public static int FoodResource
+        public  int FoodResource
         {
             get
             {
@@ -73,7 +73,7 @@ namespace Dz
 
         }
 
-        private static void smart(object sender, EventArgs e)
+        private void smart(object sender, EventArgs e)
         {
             var cat = (Cat)sender;
             if (cat.HungryStatus <= 20 && FoodResource > 0)
