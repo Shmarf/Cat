@@ -11,9 +11,9 @@ namespace Dz
     {
 
         public event EventHandler HungryStatusChanged;
-        byte _hungryStatus;
+        sbyte _hungryStatus;
 
-        public void Feed(byte needfood)
+        public void Feed(sbyte needfood)
 
         {
             HungryStatus += needfood;
@@ -35,7 +35,7 @@ namespace Dz
         {
             return (DateTime.Today - Birthday).Days / 365;
         }
-        public byte HungryStatus
+        public sbyte HungryStatus
         {
             get { return _hungryStatus; }
             set
@@ -98,7 +98,7 @@ namespace Dz
             if (HungryStatus == 0)
             {
                 Console.ForegroundColor = ConsoleColor.Black;
-                Console.WriteLine("Кошки нет в живых");
+                Console.WriteLine("Кошка мертва");
             }
             else
                 await LifeCircle();
