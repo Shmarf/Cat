@@ -13,10 +13,10 @@ namespace Dz
 
 
 
-        public static void PrintStatus()
+        public static void PrintStatus(object sander, EventArgs e)
         {
-            Cat Dusya = new Cat("Dusya", new DateTime(2011, 02, 30));
 
+            var cat1 = (Cat)sander;
             int leftPosition = Console.CursorLeft;
             int topPosition = Console.CursorTop;
             for (int i = 0; i < 3; i++)
@@ -25,7 +25,7 @@ namespace Dz
                 string color = null;
                 string message = null;
 
-                message = Dusya.GetStatus();
+                message = cat1.GetStatus();
                 color = color.Substring(0, 2);
                 color.Replace(" ", "");
                 char[] characters = color.ToCharArray();
@@ -89,7 +89,7 @@ namespace Dz
                     FoodResource = 0;
                 }
                 cat.Feed(needFood);
-                PrintStatus();
+                PrintStatus(sender, e);
             }
         }
     }

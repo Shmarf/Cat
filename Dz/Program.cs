@@ -28,7 +28,8 @@ namespace Dz
 
             Console.WriteLine($"Кошке по имени{cat.Name} уже {cat.GatAge()} лет");
             Console.SetCursorPosition(0, 3 + 1);
-            Console.ReadLine();
+            object center = null;
+            var ComandC = (CommandCenter)center;
 
         }
        
